@@ -1,4 +1,5 @@
-public class Solicitacao { //TODO
+//TODO
+public class Solicitacao {
 	private String tipoProfissional;
 	private String descricao;
 	private Cliente cliente;

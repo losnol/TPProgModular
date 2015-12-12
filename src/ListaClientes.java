@@ -1,4 +1,4 @@
-
-public class ListaClientes {
+//TODO
+public class ListaClientes extends Cliente{
 
 }
