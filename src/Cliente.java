@@ -43,4 +43,12 @@ public class Cliente {
 	public String getemail(){
 		return email;
 	}
+	public void consultarDados(){
+		System.out.println(toString());
+	}
+	public String toString(){
+		return "Cliente - Dados: \nNome: " + nome + "\nCPF: " + cpf + "\nTelefone: " +
+	telefone + "\nIdantidade: " + rg + "\nAniversaio: " + aniversario + "\nEmail: " +
+				email;
+	}
 }
