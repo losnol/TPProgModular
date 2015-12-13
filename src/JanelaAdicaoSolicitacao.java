@@ -56,9 +56,9 @@ public class JanelaAdicaoSolicitacao extends JFrame {
 		lblDescrioDoProblema.setBounds(22, 123, 121, 14);
 		contentPane.add(lblDescrioDoProblema);
 		
-		JTextArea txtrSadsadsadsaasdsadsaSda = new JTextArea();
-		txtrSadsadsadsaasdsadsaSda.setBounds(22, 151, 431, 138);
-		contentPane.add(txtrSadsadsadsaasdsadsaSda);
+		JTextArea Textao = new JTextArea();
+		Textao.setBounds(22, 151, 431, 138);
+		contentPane.add(Textao);
 		
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.addActionListener(new ActionListener() {
