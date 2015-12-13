@@ -1,67 +1,105 @@
 
 
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class JanelaAdicaoCliente extends JPanel {
+public class JanelaAdicaoCliente extends JFrame {
 
-	private static final long serialVersionUID = 4921942710145391302L;
+	private JPanel contentPane;
 	private JTextField txtNome;
+	private JTextField txtCpf;
 	private JTextField txtTelefone;
 	private JTextField txtRg;
-	private JTextField txtIversarioddmmaaaa;
 	private JTextField txtEmail;
 
 	/**
-	 * Create the panel.
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JanelaAdicaoCliente frame = new JanelaAdicaoCliente();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
 	 */
 	public JanelaAdicaoCliente() {
-		setLayout(null);
+		setTitle("Adicionar Cliente");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 507, 382);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Confirmar");
-		btnNewButton.setBounds(79, 301, 89, 23);
-		add(btnNewButton);
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnConfirmar.setBounds(55, 290, 99, 31);
+		contentPane.add(btnConfirmar);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setBounds(303, 301, 89, 23);
-		add(btnNewButton_1);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCancelar.setBounds(345, 290, 99, 31);
+		contentPane.add(btnCancelar);
 		
 		txtNome = new JTextField();
 		txtNome.setText("Nome");
-		txtNome.setBounds(79, 36, 266, 20);
-		add(txtNome);
+		txtNome.setBounds(68, 76, 313, 20);
+		contentPane.add(txtNome);
 		txtNome.setColumns(10);
+		
+		txtCpf = new JTextField();
+		txtCpf.setText("CPF");
+		txtCpf.setColumns(10);
+		txtCpf.setBounds(68, 107, 313, 20);
+		contentPane.add(txtCpf);
 		
 		txtTelefone = new JTextField();
 		txtTelefone.setText("Telefone");
-		txtTelefone.setBounds(79, 81, 266, 20);
-		add(txtTelefone);
 		txtTelefone.setColumns(10);
+		txtTelefone.setBounds(68, 138, 313, 20);
+		contentPane.add(txtTelefone);
 		
 		txtRg = new JTextField();
 		txtRg.setText("RG");
-		txtRg.setBounds(79, 132, 266, 20);
-		add(txtRg);
 		txtRg.setColumns(10);
-		
-		txtIversarioddmmaaaa = new JTextField();
-		txtIversarioddmmaaaa.setText("Aniversario (dd/mm/aaaa)");
-		txtIversarioddmmaaaa.setToolTipText("");
-		txtIversarioddmmaaaa.setBounds(79, 177, 266, 20);
-		add(txtIversarioddmmaaaa);
-		txtIversarioddmmaaaa.setColumns(10);
+		txtRg.setBounds(68, 169, 313, 20);
+		contentPane.add(txtRg);
 		
 		txtEmail = new JTextField();
-		txtEmail.setText("Email");
-		txtEmail.setBounds(79, 221, 266, 20);
-		add(txtEmail);
+		txtEmail.setText("E-mail");
 		txtEmail.setColumns(10);
+		txtEmail.setBounds(68, 200, 313, 20);
+		contentPane.add(txtEmail);
 		
-		JLabel lblInsiraOsDados = new JLabel("Insira os dados do cliente:");
-		lblInsiraOsDados.setBounds(82, 11, 229, 14);
-		add(lblInsiraOsDados);
-
+		JLabel lblInsiraAsInformaes = new JLabel("Insira as informa\u00E7\u00F5es do cliente:");
+		lblInsiraAsInformaes.setBounds(62, 28, 164, 14);
+		contentPane.add(lblInsiraAsInformaes);
 	}
+
 }

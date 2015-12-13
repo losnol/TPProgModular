@@ -1,5 +1,3 @@
-
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,7 +9,7 @@ import javax.swing.JTextField;
 
 public class interfaceClienteApp {
 
-	private JFrame frame;
+	private JFrame frmInterfaceCliente;
 
 	/**
 	 * Launch the application.
@@ -21,7 +19,7 @@ public class interfaceClienteApp {
 			public void run() {
 				try {
 					interfaceClienteApp window = new interfaceClienteApp();
-					window.frame.setVisible(true);
+					window.frmInterfaceCliente.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,26 +38,48 @@ public class interfaceClienteApp {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmInterfaceCliente = new JFrame();
+		frmInterfaceCliente.setTitle("Interface Cliente");
+		frmInterfaceCliente.setBounds(100, 100, 450, 300);
+		frmInterfaceCliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnNewButton = new JButton("Consultar Requisicao");
+		btnNewButton.setBounds(135, 145, 145, 56);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
-		frame.getContentPane().add(btnNewButton, BorderLayout.CENTER);
+		frmInterfaceCliente.getContentPane().setLayout(null);
+		frmInterfaceCliente.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Consultar Cliente");
-		frame.getContentPane().add(btnNewButton_1, BorderLayout.WEST);
-		
-		JButton btnNewButton_2 = new JButton("Adicionar Requisicao");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btnNewButton_1.setBounds(135, 78, 145, 56);
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		frame.getContentPane().add(btnNewButton_2, BorderLayout.EAST);
+		frmInterfaceCliente.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Adicionar Requisicao");
+		btnNewButton_2.setBounds(135, 11, 145, 56);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JanelaAdicaoSolicitacao janNovoServico = new JanelaAdicaoSolicitacao();
+				frmInterfaceCliente.setVisible(false);
+				janNovoServico.setVisible(true);
+			}
+		});
+		frmInterfaceCliente.getContentPane().add(btnNewButton_2);
+		
+		JButton btnEncerrar = new JButton("Encerrar");
+		btnEncerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnEncerrar.setBounds(135, 227, 145, 23);
+		frmInterfaceCliente.getContentPane().add(btnEncerrar);
 	}
 
 }

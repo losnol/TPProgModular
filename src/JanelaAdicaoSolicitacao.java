@@ -1,42 +1,102 @@
 
 
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JList;
+import javax.swing.ButtonGroup;
 
-public class JanelaAdicaoSolicitacao extends JPanel {
-	private static final long serialVersionUID = 1665724070339055274L;
+public class JanelaAdicaoSolicitacao extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
-	 * Create the panel.
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JanelaAdicaoSolicitacao frame = new JanelaAdicaoSolicitacao();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
 	 */
 	public JanelaAdicaoSolicitacao() {
-		setLayout(null);
+		setTitle("Adi\u00E7\u00E3o de Servi\u00E7o");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 563, 394);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 176, 504, 145);
-		add(textArea);
+		JLabel lblTipoProfissional = new JLabel("Tipo de profissional:");
+		lblTipoProfissional.setBounds(22, 11, 131, 14);
+		contentPane.add(lblTipoProfissional);
 		
-		JRadioButton rdbtnBombeiro = new JRadioButton("Bombeiro");
-		rdbtnBombeiro.setBounds(37, 47, 109, 23);
-		add(rdbtnBombeiro);
+		JLabel lblDescrioDoProblema = new JLabel("Descri\u00E7\u00E3o do Problema:");
+		lblDescrioDoProblema.setBounds(22, 123, 121, 14);
+		contentPane.add(lblDescrioDoProblema);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Eletricista");
-		rdbtnNewRadioButton.setBounds(37, 73, 109, 23);
-		add(rdbtnNewRadioButton);
+		JTextArea txtrSadsadsadsaasdsadsaSda = new JTextArea();
+		txtrSadsadsadsaasdsadsaSda.setBounds(22, 151, 431, 138);
+		contentPane.add(txtrSadsadsadsaasdsadsaSda);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pedreiro");
-		rdbtnNewRadioButton_1.setBounds(37, 99, 109, 23);
-		add(rdbtnNewRadioButton_1);
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnConfirmar.setBounds(56, 321, 97, 23);
+		contentPane.add(btnConfirmar);
 		
-		JLabel lblTipoDeTecnico = new JLabel("Tipo de Tecnico:");
-		lblTipoDeTecnico.setBounds(37, 26, 120, 14);
-		add(lblTipoDeTecnico);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCancelar.setBounds(373, 321, 97, 23);
+		contentPane.add(btnCancelar);
 		
-		JLabel lblDescricaoDaSolicitacao = new JLabel("Descricao da solicitacao:");
-		lblDescricaoDaSolicitacao.setBounds(37, 142, 139, 14);
-		add(lblDescricaoDaSolicitacao);
-
+		JPanel panel = new JPanel();
+		panel.setBounds(12, 35, 170, 85);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Eletricista");
+		rdbtnNewRadioButton_1.setSelected(true);
+		rdbtnNewRadioButton_1.setBounds(35, 5, 85, 23);
+		buttonGroup.add(rdbtnNewRadioButton_1);
+		panel.add(rdbtnNewRadioButton_1);
+		
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Bombeiro");
+		rdbtnNewRadioButton_2.setBounds(36, 33, 84, 23);
+		buttonGroup.add(rdbtnNewRadioButton_2);
+		panel.add(rdbtnNewRadioButton_2);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Pedreiro");
+		rdbtnNewRadioButton.setBounds(35, 59, 85, 23);
+		buttonGroup.add(rdbtnNewRadioButton);
+		panel.add(rdbtnNewRadioButton);
 	}
 }

@@ -1,5 +1,4 @@
 package interfaceCliente;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -47,16 +46,22 @@ public class interfaceClienteApp {
 		JButton btnNewButton = new JButton("Consultar Requisicao");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		frame.getContentPane().add(btnNewButton, BorderLayout.CENTER);
 		
 		JButton btnNewButton_1 = new JButton("Consultar Cliente");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		frame.getContentPane().add(btnNewButton_1, BorderLayout.WEST);
 		
 		JButton btnNewButton_2 = new JButton("Adicionar Requisicao");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		frame.getContentPane().add(btnNewButton_2, BorderLayout.EAST);
