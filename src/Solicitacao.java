@@ -14,5 +14,6 @@ public class Solicitacao {
 		this.cliente = cliente;
 	
 	}
+	
 
 }

@@ -30,12 +30,18 @@ public class ListaClientes extends Cliente{
 		else {
 			listaDeClientes.remove(cliente);
 		}
-			
+
 	}
 	public void consultarClientes(){
 		for (int i=0;i<listaDeClientes.size();i++){
 			consultar(listaDeClientes.get(i));
 		}
+	}
+	public boolean existeCliente(Cliente cliente){
+		int elemento=listaDeClientes.indexOf(cliente);
+		if (elemento==-1)
+			return false;
+		return true;
 	}
 
 }
