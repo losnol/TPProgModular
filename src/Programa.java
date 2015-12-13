@@ -7,6 +7,7 @@ public class Programa {
 		Cliente B = new Cliente();
 		A.inserir(B);
 		A.consultarClientes();
+		interfaceClienteApp C = new interfaceClienteApp();
 	}
 
 }
