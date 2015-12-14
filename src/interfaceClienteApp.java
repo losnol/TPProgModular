@@ -75,7 +75,7 @@ public class interfaceClienteApp {
 		JButton btnEncerrar = new JButton("Encerrar");
 		btnEncerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				frmInterfaceCliente.dispose();
 			}
 		});
 		btnEncerrar.setBounds(135, 227, 145, 23);
