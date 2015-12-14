@@ -14,7 +14,7 @@ public class InterfaceInicial {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void exec(){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -48,7 +48,7 @@ public class InterfaceInicial {
 		btnAreaDoCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				interfaceClienteApp areaCliente = new interfaceClienteApp();
-				areaCliente.main(new String[0]);
+				areaCliente.exec();
 				frmPrograma.dispose();
 			}
 		});
@@ -58,8 +58,8 @@ public class InterfaceInicial {
 		JButton btnAreaDoTecnico = new JButton("Area do Tecnico");
 		btnAreaDoTecnico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceTecnicoApp areaTecnico = new InterfaceTecnicoApp();
-				areaTecnico.main(new String[0]);
+				//InterfaceTecnicoApp areaTecnico = new InterfaceTecnicoApp();
+				InterfaceTecnicoApp.exec();
 				frmPrograma.dispose();
 			}
 		});
