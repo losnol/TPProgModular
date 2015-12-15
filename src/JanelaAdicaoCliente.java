@@ -24,7 +24,7 @@ public class JanelaAdicaoCliente extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void exec() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -52,6 +52,7 @@ public class JanelaAdicaoCliente extends JFrame {
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JanelaAdicaoSolicitacao.exec();
 				dispose();
 			}
 		});

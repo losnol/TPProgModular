@@ -65,9 +65,7 @@ public class interfaceClienteApp {
 		btnNewButton_2.setBounds(135, 11, 145, 56);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JanelaAdicaoSolicitacao janNovoServico = new JanelaAdicaoSolicitacao();
-				frmInterfaceCliente.setVisible(false);
-				janNovoServico.setVisible(true);
+				InterfaceConfirmacaoCliente.exec();
 			}
 		});
 		frmInterfaceCliente.getContentPane().add(btnNewButton_2);
