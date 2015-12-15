@@ -1,6 +1,6 @@
 
 import java.sql.*;
-
+import com.mysql.jdbc.Driver;
 public class ConnectionFactory {
 
     static String status = ""; //variavel que vai informar o status da conexao
