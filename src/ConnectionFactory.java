@@ -16,7 +16,8 @@ public class ConnectionFactory {
             /* ponto importante se usar um usuario diferente de root, verifique os privilegios deste com o BD.
              *  vc pode usar o Mysql administration e logar como root e ver os privilegios*/
             //a url é de acordo com a documentacao do driver, se for usar outro BD ver na documentacao
-            String url = "jdbc:mysql://localhost/modular?user=root&password=";
+            //String url = "jdbc:mysql://localhost/modular?user=root&password=";
+            String url = "jdbc:mysql://vlsistemas.com.br/vlsistem_modular?user=vlsistem_modular&password=Z]!C0W@[9a";
             conn = DriverManager.getConnection(url);
 
             //se ocorrer tudo bem, ou seja, se conectar a linha a segui é executada   
