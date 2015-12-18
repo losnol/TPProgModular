@@ -1,4 +1,3 @@
-
 public class Servico extends Solicitacao {
 	private String estado;
 	private Fatura fatura;

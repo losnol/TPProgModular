@@ -1,4 +1,3 @@
-//TODO
 public class Confirmacao {
 
 }
