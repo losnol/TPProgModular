@@ -11,6 +11,14 @@ public class Tecnico {
 	private String habilidade;
 	private List<Servico> listaDeServicos; //pega o ID do servico
 	
+	public Tecnico(){
+		this.matricula = 0;
+		this.nome = "NULL";
+		this.email = "NULL";
+		this.telefone = "TELEFONE";
+		listaDeServicos = new ArrayList<Servico>();
+	}
+	
 	public Tecnico(int matricula, String nome, String email, String telefone, String habilidade){
 		this.matricula = matricula;
 		this.nome = nome;
