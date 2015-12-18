@@ -24,6 +24,11 @@ public class Programa {
         //ClienteDao clienteDao = new ClienteDao();
         
         //clienteDao.adicionar(cliente);
+        Tecnico E = new Tecnico(15151,"blah","blah","blah","blah");
+        Servico F = new Servico(),G = new Servico(),H =  new Servico() ;
+        E.addServicoSobreTutela(H);
+        E.addServicoSobreTutela(G);
+        E.addServicoSobreTutela(F);
        
 
 	}
