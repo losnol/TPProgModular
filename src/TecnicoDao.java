@@ -41,6 +41,14 @@ public class TecnicoDao {
             stmt.setString(4, tecnico.getHabilidade());
             //stmt.setDate(5, cliente.getAniversario());
             stmt.setString(5, tecnico.getEmail());
+            for (int i=0;i<2;i++){
+            	try{
+            		stmt.setInt(6+i, tecnico.getServicosSobTutela().get(i).getIdentificador());}
+            	catch (IndexOutOfBoundsException e){
+            		stmt.setInt(6+i, 0);
+            	}
+            }
+      
             
             System.out.println(stmt);
             // executa
