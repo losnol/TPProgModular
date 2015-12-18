@@ -13,7 +13,7 @@ public class Programa {
 		A.consultarClientes();
 		//JanelaAdicaoCliente D =  new JanelaAdicaoCliente();
 		//D.setVisible(true);
-		
+		//dfdgdfg
         ConnectionFactory.getConnection();
         System.out.println(ConnectionFactory.status); //imprime o valor de status
         

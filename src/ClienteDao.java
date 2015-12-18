@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.sql.*;    
-import java.sql.PreparedStatement; 
+
+import java.awt.List;
+import java.sql.*;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,12 +21,11 @@ public class ClienteDao {
         this.connection = new ConnectionFactory().getConnection();
     }
 
-    public void adicionar(Cliente cliente) {
+    public Boolean adicionar(Cliente cliente) {
         String sql = "INSERT INTO clientes "
                 + "(nome, cpf, telefone, rg, email)"
                 + "values (?, ?, ?, ?, ?)";
-        
-        
+
         try {
             // prepared statement para inserção
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -34,16 +36,41 @@ public class ClienteDao {
             stmt.setString(3, cliente.getTelefone());
             stmt.setString(4, cliente.getRg());
             //stmt.setDate(5, cliente.getAniversario());
-            stmt.setString(5, cliente.getemail());
-            
+            stmt.setString(5, cliente.getEmail());
+
             System.out.println(stmt);
             // executa
-            if (stmt.execute()) {
-               System.out.println("Dados inseridos com sucesso");
-            }
+            stmt.execute();
             stmt.close();
+            return true;
+
         } catch (SQLException e) {
-            System.out.println("Não foi possível inserir os dados do cliente");
+            return false;
+        }
+    }
+
+    public ArrayList<Cliente> getLista() {
+        try {
+            ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+            PreparedStatement stmt = this.connection.prepareStatement("select * from clientes");
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                // criando o objeto Contato
+                Cliente cliente = new Cliente();
+
+                cliente.setNome(rs.getString("nome"));
+                cliente.setCpf(rs.getString("cpf"));
+                cliente.setRg(rs.getString("rg"));
+                cliente.setTelefone(rs.getString("telefone"));
+                cliente.setEmail(rs.getString("email"));
+                // adicionando o objeto à lista
+                clientes.add(cliente);
+            }
+            rs.close();
+            stmt.close();
+            return clientes;
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
